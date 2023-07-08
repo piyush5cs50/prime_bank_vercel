@@ -14,7 +14,7 @@ require("../db/connect")
 const user = require('../model/account')
 const path = require('path')
 const auth = require('../middleware/auth')
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 // Configure multer to handle the uploaded file
 const storage = multer.diskStorage({
