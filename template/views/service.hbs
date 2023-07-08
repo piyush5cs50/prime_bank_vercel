@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- bootstrap Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/bootstrap-icons.svg">
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Home</title>
+</head>
+<body id="service_page_body">
+
+
+  <!-- Navbar -->
+
+
+  <nav id="nav" class="navbar navbar-expand-lg navbar-dark service_page_nav">
+    <div class="container-fluid  d-flex justify-content-between">
+      <a class="navbar-brand" href="/service">Prime-Banking</a>
+        
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+
+          <div class="collapse navbar-collapse service_nav_button" id="navbarNav">
+        <ul class="navbar-nav">
+    
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Transation-history</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Account-Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/logout">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled"></a>
+          </li>
+        </ul>
+      </div>
+        
+    </div>
+  </nav>
+
+
+
+
+
+
+    <!-- Bank balance -->
+
+    <div class="container ">
+        <div class="row mt-5 mb-5">
+            <div class="col-8 text-center pt-4 pb-4 m-auto  text-light border bank_balance">
+
+              <img class="profileImg mb-3" src="/uploads/{{passportImg}}" width="150px" height="150px" alt="">
+                <h3 class="fw-extra-bold">
+                    Hi, {{firstName}} {{lastName}}
+                </h3>
+
+                <h5>
+                    Your Account Number is:
+                </h5>
+                
+                <h4 class="fw-bolder">
+                    {{accountNumber}}
+                </h4>
+
+                <h5 class="text-xl font-md">Your remaining balance is:</h5>
+
+                <h5 class="font-xl">Rupees {{ammount}}</h5>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+<!-- Icons -->
+    <div class="container mt-4 mb-5">
+        <div class="row ">
+
+          <a class="col-5 col-md-2 mb-3  service_buttons m-auto text-center" style="text-decoration: none;" href="/transaction">
+            <div >
+              <i class="fa-solid fa-wallet fa-bounce fa-2xl mt-5 mb-4" style="color: #083661;"></i>
+                <h6 class="Service_icons mb-4">Transfer Money
+                </h6>
+              </div>
+          </a>
+            
+
+
+            <a class="col-5 col-md-2 mb-3  service_buttons m-auto text-center" style="text-decoration: none;" href="/switch">
+            <div >
+               <i class="fa-solid fa-repeat fa-2xl fa-bounce mt-5 mb-4" style="color: #083661;"></i>
+<h6 class="Service_icons mb-4">Switch Account
+                </h6>
+            </div>
+            </a>
+
+            <a class="col-5 col-md-2 mb-3  service_buttons m-auto text-center" style="text-decoration: none;" href="/transaction__history">
+            <div >
+               <i class="fa-solid fa-clock-rotate-left fa-2xl mt-5 mb-4" style="color: #083661;"></i>
+                <h6 class="Service_icons mb-4">Transaction history
+                </h6>
+            </div>
+          </a>
+
+            <a class="col-5 col-md-2 mb-3  service_buttons m-auto text-center" style="text-decoration: none;" href="/transaction">
+            <div >
+              <i class="fa-solid fa-mobile fa-2xl fa-bounce mt-5 mb-4" style="color: #083661;"></i>
+                <h6 class="Service_icons mb-4">Recharge
+                </h6>
+            </div>
+          </a>
+
+            <a class="col-5 col-md-2 mb-3  service_buttons m-auto text-center" style="text-decoration: none;" href="/transaction">
+            <div >
+              <i class="fa-solid fa-file-invoice-dollar fa-2xl mt-5 mb-4" style="color: #083661;"></i>
+                <h6 class="Service_icons mb-4">Pay Bills
+                </h6>
+            </div>
+          </a>
+
+            
+            </div>
+        </div>
+
+
+
+<!-- </div> -->
+
+
+     <!-- bootstrap slider And Service form -->
+     <div class="container d-flex bg-light border slider_container mb-5 ">
+
+        <div class="row justify-content-center">
+
+            <div class="com-12 col-lg-9 ">
+<div id="carouselExampleCaptions" class="carousel slide service_slider" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/bk-6.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="images/bk-2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="images/bk-5.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none  d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> 
+            </div>
+
+
+
+<!--Service form -->
+          <div class="pe-lg-5 mt-5 mb-5 col-6 col-lg-3 d-flex flex-column align-item-center justify-content-center" style="margin-top: 0; margin-bottom: 0;" id="services_form">
+
+            <h5>Personal Banking Services
+
+              <span style="font-weight: bold;">
+                What Are You Looking For?
+              </span>
+               </h5>
+
+            <form class="text-center mt-3" id="login_form" action="POST">
+
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-dark dropdown-toggle text-secondary w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select Product Type</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Card</a></li>
+                  <li><a class="dropdown-item" href="#">Account</a></li>
+                  <li><a class="dropdown-item" href="#">Deposits</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Loan</a></li>
+                  <li><a class="dropdown-item" href="#">EMI</a></li>
+                </ul>
+                
+              </div>
+
+              <div class="input-group mb-3 w-100">
+                <button class="btn btn-outline-dark dropdown-toggle text-secondary w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select Product</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                
+              </div>
+
+             
+
+                <button class="dark_btn w-100" type="submit">Apply Online</button>
+                <br>
+                <a id="link" class="know_more" href="/new_account">Know more</a>
+            </form>
+          </div>
+
+
+        </div>
+
+        
+     </div>
+         
+
+     <!-- unIdentified colosing tag -->
+    <!-- </div>  -->
+
+ <!-- footer -->
+    
+ <div id="footer" class="footer">
+  <div id="footer__item">
+     <li>
+         © Copyright Prime-Banking Ltd.
+     </li>
+     <li>
+         <a href="">Terms & Conditions</a>
+     </li>
+     <li>
+         <a href="">Privacy Policy</a>
+     
+     </li>
+  </div>
+     </div>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- fontAwsome -->
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
