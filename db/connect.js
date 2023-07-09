@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 
-const db = 'mongodb+srv://piyushahuja733:YPdsMJzU7ELtzQr6@cluster0.voyncd8.mongodb.net/PrimeBankAccount?retryWrites=true&w=majority'
+
+console.log("MongoDB_connection_URI: " + process.env.MongoDB_connection_URI)
 mongoose.set('strictQuery', false)
-mongoose.connect(db)
+mongoose.connect(process.env.MongoDB_connection_URI)
 .then(() => console.log("connection successful"))
 .catch((e) => console.log(e))
