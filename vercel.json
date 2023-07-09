@@ -2,5 +2,5 @@
   "version": 2,
   "name": "prime-banking",
   "builds": [{ "src": "src/app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/src/server.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/src/app.js" }]
 }
