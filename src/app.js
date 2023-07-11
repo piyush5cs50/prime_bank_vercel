@@ -13,8 +13,9 @@ app.use(cookieParser());
 require("../db/connect")
 const user = require('../model/account')
 const path = require('path')
+const fs = require('fs')
 const auth = require('../middleware/auth')
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000
 
 // Configure multer to handle the uploaded file
 const storage = multer.diskStorage({
@@ -30,12 +31,25 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 
+hbs.registerHelper('fileExists', function (filePath) {
+  try {
+    console.log(filePath)
+    const uploads = path.join(__dirname, '../uploads')
+    console.log(uploads) 
+
+    const img = path.join(uploads,"/", filePath)
+    console.log(img)
+    return fs.existsSync(img);
+  } catch (error) {
+    return false;
+  }
+});
+
 // Initialize Nexmo with your API credentials
 // const nexmo = new Nexmo({
 //   apiKey: '66c1fbe7',
 //   apiSecret: 'A6gs57VpE11WlsFJ',
 // });
-
 
 // Paths
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
@@ -98,7 +112,8 @@ try{
       httpOnly: true
     })
 
-    console.log(token)
+    console.log("token" + token)
+     
 
   const result = await registration.save()
   
@@ -137,6 +152,8 @@ app.post('/login', async(req,res)=>{
     if(result.phone == login__phone__number && isMatch){
 
       const token = await result.generateAuthToken()
+
+      console.log("token" + token)
 
     res.cookie("jwt", token, {
       expires: new Date(Date.now() + 60000),

@@ -65,7 +65,12 @@
         <div class="row mt-5 mb-5">
             <div class="col-8 text-center pt-4 pb-4 m-auto  text-light border bank_balance">
 
+              {{#if (fileExists passportImg)}}
               <img class="profileImg mb-3" src="/uploads/{{passportImg}}" width="150px" height="150px" alt="">
+              {{else}}
+              <img class="profileImg mb-3" src="/uploads/user.png" width="150px" height="150px" alt="">
+              {{/if}}
+              
                 <h3 class="fw-extra-bold">
                     Hi, {{firstName}} {{lastName}}
                 </h3>
