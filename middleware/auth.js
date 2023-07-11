@@ -18,7 +18,7 @@ const auth = async(req,res,next)=>{
         next()
         }
         catch(e){
-            res.send(e)
+            res.status(500).send(e);
         }
 }
 

@@ -1,6 +1,5 @@
 const express = require("express");
 const bcrypt = require('bcrypt')
-// const axios = require('axios')
 const Nexmo = require('nexmo');
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
@@ -277,7 +276,7 @@ console.log(saveTransactionFrom)
 //   });
 
 
-  res.render('success', auth ,{
+  res.render('success',{
     fromAccount:req.user.accountNumber,
     fromFN:req.user.firstName,
     fromLN:req.user.lastName,
