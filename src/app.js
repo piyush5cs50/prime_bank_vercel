@@ -125,11 +125,14 @@ try{
 
 app.post('/login', async(req,res)=>{
   const {login__account__number,login__phone__number,login__password} = req.body;
-  
+  console.log(login__account__number)
   try{
+    
   const result = await user.findOne({accountNumber:login__account__number})
-  
+  console.log(result)
+
   const isMatch = await bcrypt.compare(login__password, result.password)
+  console.log(isMatch)
   if(result){
     if(result.phone == login__phone__number && isMatch){
 
