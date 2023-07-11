@@ -39,7 +39,9 @@ hbs.registerHelper('fileExists', function (filePath) {
 
     const img = path.join(uploads,"/", filePath)
     console.log(img)
-    return fs.existsSync(img);
+    const doesExist = fs.existsSync(img);
+    console.log(`Does image exist Exist ${doesExist}`)
+    return doesExist
   } catch (error) {
     return false;
   }
@@ -153,13 +155,11 @@ app.post('/login', async(req,res)=>{
 
       const token = await result.generateAuthToken()
 
-      console.log("token" + token)
+      console.log("token:" + token)
 
     res.cookie("jwt", token, {
       expires: new Date(Date.now() + 60000),
-      httpOnly: true,
-      domain:'localhost',
-      secure:true
+      httpOnly: true
     })
     
 
@@ -277,8 +277,7 @@ console.log(saveTransactionFrom)
 //   });
 
 
-
-  res.render('success',{
+  res.render('success', auth ,{
     fromAccount:req.user.accountNumber,
     fromFN:req.user.firstName,
     fromLN:req.user.lastName,
