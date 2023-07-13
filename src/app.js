@@ -171,7 +171,11 @@ app.post('/login', async(req,res)=>{
         })
     }
     else{
-      return res.send('invalid user cridentials')
+      return res.render('fail',{
+        error: "No Such User Exists",
+        reason:"Invalid Login Credentials",
+        suggestion: "Check Your Login Credentials And Try Again"
+      })
     }
   }
 }
@@ -414,6 +418,13 @@ app.get('/logout', auth , async(req,res)=>{
  }
 })
 
+app.get('/terms_and_conditions',(req,res)=>{
+  res.render('terms_and_conditions')
+})
+
+app.get('/privacy_policy',(req,res)=>{
+  res.render('privacy_policy')
+})
 
 function generateAccountNumber() {
   const digits = '0123456789';

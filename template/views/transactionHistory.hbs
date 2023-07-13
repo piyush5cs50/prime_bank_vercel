@@ -56,7 +56,10 @@
 
 <h2 class="text-center mb-5 mt-5">Transaction History</h2>
 
+  {{#if transaction.length}}
+
 <table class="text-center table table-hover table-striped table-borderless transaction__history__table mt-3">
+
     <thead>
         <tr class="">
             <th scope="col">Sr.No</th>
@@ -73,6 +76,7 @@
     </thead>
 
     <tbody>
+
 
         {{#each transactions}}
         <tr class="">
@@ -106,6 +110,14 @@
     </tbody>
 </table>
 
+{{else}}
+
+<div class="nothing">
+  <p class="text-center fw-300">No Transactions yet</p> 
+</div>
+    
+
+{{/if}}
 
 
        </div>
@@ -142,19 +154,20 @@
     <!-- footer -->
     
     <div id="footer" class="footer">
- <div id="footer__item">
-    <li>
-        © Copyright Prime-Banking Ltd.
-    </li>
-    <li>
-        <a href="">Terms & Conditions</a>
-    </li>
-    <li>
-        <a href="">Privacy Policy</a>
-    
-    </li>
- </div>
+      <div id="footer__item">
+        <li>
+          © Copyright Prime-Banking Ltd.
+        </li>
+        <li>
+          <a href="/terms_and_conditions">Terms & Conditions</a>
+        </li>
+        <li>
+          <a href="/privacy_policy">Privacy Policy</a>
+
+        </li>
+      </div>
     </div>
+
     
 
     <!-- bootstrap js -->

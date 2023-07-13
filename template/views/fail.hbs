@@ -20,7 +20,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <title>Faliur</title>
+    <title>Fail</title>
   </head>
   <body>
     <!-- Navbar -->
@@ -64,11 +64,11 @@
         
           <i class="fa-solid fa-circle-exclamation fa-2xl mb-4 " style="color: #ff0000;"></i>      
     
-          <h4>{{error}}</h4>
+          <h4 class="mt-1">{{error}}</h4>
 
-          <p>Error occured while proceding your request.
+          <p>{{reason}}.
             <br>
-            Please try again later.
+            {{suggestion}}.
           </p>
           </div>
         </div>
@@ -90,7 +90,6 @@
         </li>
       </div>
     </div>
-
 
     <!-- bootstrap js -->
     <script
