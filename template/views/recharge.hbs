@@ -13,7 +13,7 @@
         <!-- fontawsome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Transaction</title>
+    <title>Recharge</title>
 </head>
 <body>
 
@@ -57,32 +57,45 @@
             <h2>Enter The Account Details</h2>
 
             <!-- bootstrap form -->
-            <form action="/transfer" method="POST" id="create_account_form" class="row g-3 ">
-
-
-                <div class="col-md-6">
-                    <label for="full__name" class="form-label">Recipient Name</label>
-                    <input required id="name" type="text" class="form-control" placeholder="Full name" aria-label="First name" name="name">
-                  </div>
+            <form action="/recharge" method="POST" id="create_account_form" class="row g-3 ">
 
 
 
                   <div class="col-md-6">
-                    <label for="account__number" class="form-label">Account Number</label>
-                    <input required id="account__number" minl="" type="text" inputmode="numeric" min="12" max="12" class="form-control" placeholder="XXXX XXXX XXXX" aria-label="Account number" name="account__number">
+                    <label for="phone__number" class="form-label">Phone Number</label>
+                    <input required id="phone__number" minl="" type="text" inputmode="numeric" min="10" max="10" class="form-control" placeholder="XX XXXX XXXX" aria-label="Phone number" name="phone__number">
                   </div>
 
 
+<div class="col-md-6">
+                    <label for="service__provider" class="form-label">Select Your Sevice Provider</label>
+                    
+                    <select id="service__provider"class="form-select" name="service__provider"  aria-label="Default select example">
+  <option selected value="jio">Jio</option>
+  <option value="airtel">Airtel</option>
+  <option value="vi">VI</option>
+  <option value="bsnl">BSNL</option>
+</select>
+                  </div>
+
                   <div class="col-md-6">
-                    <label for="amount" class="form-label">Amount In Rupees</label>
-                    <input required id="amount" type="text" inputmode="numeric" class="form-control" placeholder="X,XX,XXX" aria-label="Amount" name="ammount">
+                    <label for="plans" class="form-label">Recharge Plan</label>
+
+                    <select id="plans"class="form-select" name="plans"  aria-label="Default select example">
+  <option selected value="199">199</option>
+  <option value="299">299</option>
+  <option value="399">399</option>
+  <option value="499">499</option>
+  <option value="599">599</option>
+  <option value="699">699</option>
+</select>
                   </div>
 
 
                   
 
                 <div class="col-12">
-                  <button type="submit" class="btn dark_btn text-light">Proceed Transaction</button>
+                  <button type="submit" class="btn dark_btn text-light">Proceed to recharge</button>
                   {{!-- <button type="submit" class="btn dark_btn text-light" data-bs-target="#exampleModal"  data-bs-toggle="modal">Proceed Transaction</button> --}}
                 </div>
               </form>

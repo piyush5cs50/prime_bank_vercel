@@ -145,7 +145,7 @@ app.post('/login', async(req,res)=>{
   try{
     
   const result = await user.findOne({accountNumber:login__account__number})
-  console.log(result)
+  // console.log(result)
 
   const isMatch = await bcrypt.compare(login__password, result.password)
   console.log(isMatch)
@@ -181,6 +181,8 @@ catch(e){
 
 })
 
+
+// Amount Transaction
 app.post('/transfer',auth, async(req,res)=>{
   try{
   const {name,account__number,ammount} = req.body;
@@ -276,6 +278,7 @@ console.log(saveTransactionFrom)
 //   });
 
 
+
   res.render('success',{
     fromAccount:req.user.accountNumber,
     fromFN:req.user.firstName,
@@ -285,7 +288,7 @@ console.log(saveTransactionFrom)
     toLN: receiverAccount.lastName,
     date:date,
     time:time,
-    ammount:ammount
+    amount:ammount.toLocaleString()
   })
   }
   catch(e){
@@ -293,6 +296,59 @@ console.log(saveTransactionFrom)
   }
 })
 
+
+// Recharge route
+app.post('/recharge',auth, async(req,res)=>{
+  try{
+  console.log('recharge')
+ 
+  console.log("req.body ")
+  console.log(req.body)
+  console.log("req.body.plan")
+  console.log( req.body.plans)
+  console.log("req.user.firstName")
+  console.log(req.user.firstName)
+
+  console.log("ammount before "+ req.user.ammount)
+  console.log(req.user.ammount + "-" + req.body.plans)
+  req.user.ammount = (parseInt(req.user.ammount) - parseInt(req.body.plans));
+  console.log("ammount after "+ req.user.ammount)
+  const result = await req.user.save()
+  console.log(result)
+
+
+  // getting current date in dd/mm/yy formate
+  const currentDate = new Date();
+
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const year = String(currentDate.getFullYear()).slice(-2);
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+   
+  const date = `${day}/${year}/${month}`;
+  
+  
+  // getting current time in hh/mm/ss formate
+  const hours = String(currentDate.getHours()).padStart(2, '0');
+  const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+  const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+  
+  const time = `${hours}/${minutes}/${seconds}`;
+  
+
+  res.render('success'
+  ,{
+    phone:req.body.phone__number,
+    serviceProvider:req.body.service__provider,
+    plan:req.body.plans,
+    time:time,
+    date:date
+  }
+  )
+  }
+  catch(e){
+    res.status(500).send(e)
+  }
+})
 
 app.get('/', (req,res) => {
     res.render("index")
@@ -313,6 +369,23 @@ app.get('/transaction', auth ,(req,res) => {
 
 app.get('/switch', auth,(req,res)=> {
   res.render('switch')
+})
+
+app.get('/recharge',auth,(req,res)=>{
+  res.render('recharge')
+})
+
+app.get('/profile',auth,(req,res) => {
+  res.render('profile',{
+    accountNumber:req.user.accountNumber,
+    firstName:req.user.firstName,
+    lastName: req.user.lastName,
+    email:req.user.email,
+    phone:req.user.phone,
+    city:req.user.city,
+    state:req.user.state,
+    ammount:req.user.ammount.toLocaleString()
+  })
 })
 
 app.get('/transaction__history',auth, (req,res) => {

@@ -78,6 +78,7 @@
 <table class="table table-borderless mt-5">
     
     <tbody>
+      {{#if fromAccount}}
       <tr>
         <th>Transaction ID</th>
         <th scope="row">DFSDGGSDF883348</th>
@@ -106,9 +107,54 @@
       </tr>
       <tr>
         <th>Amount</th>
-        <th scope="row">13450</th>
+        <th scope="row">{{amount}}</th>
       </tr>
+      {{/if}}
+
+
+    {{#if phone}}
+      <tr>
+        <th>Transaction ID</th>
+        <th scope="row">DFSDGGSDF883348</th>
+      </tr>
+      <tr>
+        <th>Mobile Number:</th>
+        <th scope="row">{{phone}}<br> 
+       
+        </th>
+       
+      </tr>
+      <tr>
+        <th>Price: </th>
+        <th scope="row">{{plan}}<br> 
+       
+        </th>
+       
+      </tr>
+      <tr>
+        <th>Service Provider</th>
+        <th scope="row">{{serviceProvider}}<br> 
+       
+        </th>
+       
+      </tr>
+      <tr>
+        <th>Date:</th>
+        <th scope="row">{{date}}</th>
+      </tr>
+      <tr>
+        <th>Time:</th>
+        <th scope="row">{{time}}</th>
+      </tr>
+   {{/if}}
+
+      
     </tbody>
+    
+    
+
+    
+    
   </table>
           </div>
         </div>

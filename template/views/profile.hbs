@@ -13,7 +13,7 @@
         <!-- fontawsome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Transaction</title>
+    <title>Profile</title>
 </head>
 <body>
 
@@ -49,45 +49,62 @@
         </nav>
 
 
-    <div class="contaioner" id="section_maring">
+        <!-- Bank balance -->
 
-       
-          <div id="create_account">
+    <div class="container ">
+        <div class="row mt-5 mb-5">
+            <div class="col-8 text-center pt-4 pb-4 m-auto  text-light border bank_balance">
 
-            <h2>Enter The Account Details</h2>
+              {{#if (fileExists passportImg)}}
+              <img class="profileImg mb-3" src="/uploads/{{passportImg}}" width="150px" height="150px" alt="">
+              {{else}}
+              <img class="profileImg mb-3" src="/uploads/user.png" width="150px" height="150px" alt="">
+              {{/if}}
+              
+                <h3 class="fw-extra-bold mb-3">
+                    {{firstName}} {{lastName}}
+                </h3>
 
-            <!-- bootstrap form -->
-            <form action="/transfer" method="POST" id="create_account_form" class="row g-3 ">
+                <hr>
+
+                <h4 class="fw-bolder fs-4">
+                    <i class="fa-solid fa-building-columns me-1"></i>
+                    {{accountNumber}}
+                    
+                </h4>
+
+                <hr>
+
+                <h5 class="fs-5 fw-100">
+                    <i class="fa-solid fa-coins me-1"></i>
+                    {{ammount}}
+                </h5>
+
+               <hr>
+ 
+               <h5 class="fs-6 fw-400">
+                    <i class="fa-solid fa-phone me-1" style="color: #ffffff;"></i>
+                    {{phone}}
+                </h5>
+
+<hr>
 
 
-                <div class="col-md-6">
-                    <label for="full__name" class="form-label">Recipient Name</label>
-                    <input required id="name" type="text" class="form-control" placeholder="Full name" aria-label="First name" name="name">
-                  </div>
+<h5 class="fs-6  fw-100">
+                <i class="fa-solid fa-envelope me-1" style="color: #ffffff;"></i>
+                    {{email}}
+                </h5>
 
+<hr>
 
+                <h5 class="fs-6  fw-100">
+                <i class="fa-solid fa-location-dot me-1" style="color: #ffffff;"></i>
+                    {{city}},{{state}}
+                </h5>
 
-                  <div class="col-md-6">
-                    <label for="account__number" class="form-label">Account Number</label>
-                    <input required id="account__number" minl="" type="text" inputmode="numeric" min="12" max="12" class="form-control" placeholder="XXXX XXXX XXXX" aria-label="Account number" name="account__number">
-                  </div>
+            </div>
 
-
-                  <div class="col-md-6">
-                    <label for="amount" class="form-label">Amount In Rupees</label>
-                    <input required id="amount" type="text" inputmode="numeric" class="form-control" placeholder="X,XX,XXX" aria-label="Amount" name="ammount">
-                  </div>
-
-
-                  
-
-                <div class="col-12">
-                  <button type="submit" class="btn dark_btn text-light">Proceed Transaction</button>
-                  {{!-- <button type="submit" class="btn dark_btn text-light" data-bs-target="#exampleModal"  data-bs-toggle="modal">Proceed Transaction</button> --}}
-                </div>
-              </form>
-          </div>
-
+        </div>
     </div>
 
 

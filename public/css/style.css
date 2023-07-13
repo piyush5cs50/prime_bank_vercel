@@ -61,7 +61,6 @@ body{
 #nav_buttons a{
     margin-left: 7px;
     margin-right: 0px !important;
-    margin-bottom: 2px;
 }
 
 #nav{
@@ -93,11 +92,7 @@ body{
     margin: 70px auto;
 }
 
-#acount_login h2, #create_account h2{
-    margin-top: 30px;
-    font-size: 38px;
-    text-align: center;
-}
+
 
 #acount_login #login_form{
     display: flex;
